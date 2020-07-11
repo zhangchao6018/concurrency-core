@@ -8,6 +8,9 @@ public class RightWayStopThreadWithoutSleep implements Runnable {
     @Override
     public void run() {
         int num = 0;
+        /**
+         * 业务中需要判断是否被中断  否则interrupt()没有意义
+         */
         while (!Thread.currentThread().isInterrupted() && num <= Integer.MAX_VALUE / 2) {
             if (num % 10000 == 0) {
                 System.out.println(num + "是10000的倍数");

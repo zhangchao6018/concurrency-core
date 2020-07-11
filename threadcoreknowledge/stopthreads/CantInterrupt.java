@@ -16,6 +16,7 @@ public class CantInterrupt {
                 try {
                     Thread.sleep(10);
                 } catch (InterruptedException e) {
+                    System.out.println("isInterrupted标记位:"+Thread.currentThread().isInterrupted());
                     e.printStackTrace();
                 }
             }

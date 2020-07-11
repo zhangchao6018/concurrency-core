@@ -17,6 +17,7 @@ public class RightWayStopThreadWithSleep {
                 }
                 Thread.sleep(1000);
             } catch (InterruptedException e) {
+                System.out.println("isInterrupted标记位:"+Thread.currentThread().isInterrupted());
                 e.printStackTrace();
             }
         };
