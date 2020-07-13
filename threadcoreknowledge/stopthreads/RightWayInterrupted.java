@@ -19,13 +19,13 @@ public class RightWayInterrupted {
         threadOne.start();
         //设置中断标志
         threadOne.interrupt();
-        //获取中断标志
+        //获取中断标志true
         System.out.println("isInterrupted: " + threadOne.isInterrupted());
-        //获取中断标志并重置
+        //获取中断标志并重置false--跟方法调用对象的类无关 指的是真正执行该方法的线程
         System.out.println("isInterrupted: " + threadOne.interrupted());
-        //获取中断标志并重直
+        //获取中断标志并重直false
         System.out.println("isInterrupted: " + Thread.interrupted());
-        //获取中断标志
+        //获取中断标志true
         System.out.println("isInterrupted: " + threadOne.isInterrupted());
         threadOne.join();
         System.out.println("Main thread is over.");

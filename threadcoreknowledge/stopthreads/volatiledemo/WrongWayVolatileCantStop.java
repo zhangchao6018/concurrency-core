@@ -2,7 +2,6 @@ package threadcoreknowledge.stopthreads.volatiledemo;
 
 import java.util.concurrent.ArrayBlockingQueue;
 import java.util.concurrent.BlockingQueue;
-import java.util.concurrent.ConcurrentLinkedQueue;
 
 /**
  * 描述：     演示用volatile的局限part2 陷入阻塞时，volatile是无法线程的 此例中，生产者的生产速度很快，消费者消费速度慢，所以阻塞队列满了以后，生产者会阻塞，等待消费者进一步消费
@@ -47,6 +46,7 @@ class Producer implements Runnable {
         try {
             while (num <= 100000 && !canceled) {
                 if (num % 100 == 0) {
+                    //阻塞到这里了  因此不会跳出循环做检查--这也是interrupt()方法设计的原因之一
                     storage.put(num);
                     System.out.println(num + "是100的倍数,被放到仓库中了。");
                 }

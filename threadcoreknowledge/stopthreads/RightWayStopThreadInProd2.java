@@ -17,10 +17,14 @@ public class RightWayStopThreadInProd2 implements Runnable {
         }
     }
 
+    /**
+     * 子方法,在处理线程中断后重新恢复设置中断
+     */
     private void reInterrupt() {
         try {
             Thread.sleep(2000);
         } catch (InterruptedException e) {
+            //如果此处不抛出,则在调用方无法得知中断请求
             Thread.currentThread().interrupt();
             e.printStackTrace();
         }
