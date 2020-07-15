@@ -12,11 +12,11 @@ public class NewRunnableTerminated implements Runnable {
         thread.start();
         System.out.println(thread.getState());
         try {
-            Thread.sleep(10);
+            Thread.sleep(5);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
-        //打印出RUNNABLE的状态，即使是正在运行，也是RUNNABLE，而不是RUNNING
+        //打印出RUNNABLE的状态，即使是正在运行，也是RUNNABLE，而不是RUNNING   ->不同的计算机需要调整休眠时间才能出现该现象
         System.out.println(thread.getState());
         try {
             Thread.sleep(100);
