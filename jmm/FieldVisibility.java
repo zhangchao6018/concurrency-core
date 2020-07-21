@@ -2,6 +2,17 @@ package jmm;
 
 /**
  * 描述：     演示可见性带来的问题
+ *
+ * 如果不加volatile关键字(4种可能性)
+ * a=3,b=2
+ *
+ * a=1,b=2
+ *
+ * a=3,b=3
+ *
+ * 罕见但是可能发生的
+ *
+ * a=1,b=3
  */
 public class FieldVisibility {
 
