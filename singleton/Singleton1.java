@@ -2,6 +2,8 @@ package singleton;
 
 /**
  * 描述：     饿汉式（静态常量）（可用）
+ * 1.代码简单
+ * 2.类加载时就进行了实例化
  */
 public class Singleton1 {
 
