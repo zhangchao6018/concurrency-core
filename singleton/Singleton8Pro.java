@@ -1,7 +1,11 @@
-package com.imooc.zhangxiaoxi.alllearning.singleton;
+package singleton;
 
 /**
  * 描述：     证明枚举单例模式的安全性
+ *
+ * 效率：
+ *
+ * 编码简单
  */
 public enum Singleton8Pro {
     INSTANCE(new Object());
